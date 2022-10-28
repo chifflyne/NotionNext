@@ -27,9 +27,9 @@ const BLOG = {
 
   // 自定义字体示例： 请先将 CUSTOM_FONT 改为 true， 并将 CUSTOM_FONT_URL 改为你的字体CSS地址，同时在 CUSTOM_FONT_SANS 与 CUSTOM_FONT_SERIF 中指定你的 fontfamily
   CUSTOM_FONT: true, // 是否使用自定义字体
-  CUSTOM_FONT_URL: ['https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.6.0/lxgwwenkaiscreen.css'], // 自定义字体的CSS
-  CUSTOM_FONT_SANS: ['LXGW WenKai Screen'], // 自定义无衬线字体
-  CUSTOM_FONT_SERIF: ['LXGW WenKai Screen'], // 自定义衬线字体
+  CUSTOM_FONT_URL: ['https://cdn.jsdelivr.net/gh/max32002/FakePearl@1.1/webfont/FakePearl-Regular.woff2'], // 自定义字体的CSS
+  CUSTOM_FONT_SANS: ['FakePearl-Regular'], // 自定义无衬线字体
+  CUSTOM_FONT_SERIF: ['FakePearl-Regular'], // 自定义衬线字体
 
   // 图标字体
   FONT_AWESOME_PATH: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css', // 图标库CDN ，国内推荐BootCDN，国外推荐 CloudFlare https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
