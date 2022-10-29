@@ -11,6 +11,7 @@ import { useRouter } from 'next/router'
 import ArticleCopyright from './ArticleCopyright'
 import WordCount from './WordCount'
 import NotionPage from '@/components/NotionPage'
+import { YouTubePlayer } from '@/components/YouTubePlayer'
 
 /**
  *
