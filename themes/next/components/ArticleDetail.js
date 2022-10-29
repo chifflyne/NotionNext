@@ -9,7 +9,6 @@ import { useGlobal } from '@/lib/global'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import ArticleCopyright from './ArticleCopyright'
-import WordCount from './WordCount'
 import NotionPage from '@/components/NotionPage'
 import { YouTubePlayer } from '@/components/YouTubePlayer'
 
@@ -74,10 +73,6 @@ export default function ArticleDetail(props) {
 
           <div className='mr-2'>
             <i className='far fa-clock mr-2' />{locale.COMMON.LAST_EDITED_TIME} {post.lastEditedTime}
-          </div>
-
-          <div className='flex flex-nowrap whitespace-nowrap items-center font-light text-md'>
-            <WordCount />
           </div>
         </section>
 
