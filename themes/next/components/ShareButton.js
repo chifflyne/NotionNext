@@ -1,34 +1,70 @@
+import BLOG from '@/blog.config'
+import { useRouter } from 'next/router'
 import React from 'react'
-import ShareBar from './ShareBar'
+import { createPopper } from '@popperjs/core'
+import copy from 'copy-to-clipboard'
+import QRCode from 'qrcode.react'
+import { useGlobal } from '@/lib/global'
+import CONFIG_NEXT from '../config_next'
 
-/**
- * 悬浮在屏幕右下角,分享按钮
- * @returns {JSX.Element}
- * @constructor
- */
-const ShareButton = ({ post }) => {
-  const [popoverShow, setPopoverShow] = React.useState(false)
+const ShareBar = ({ post }) => {
+  if (!CONFIG_NEXT.ARTICLE_SHARE) {
+    return <></>
+  }
+  const router = useRouter()
+  const shareUrl = BLOG.LINK + router.asPath
+
+  // 二维码悬浮
+  const [qrCodeShow, setQrCodeShow] = React.useState(false)
   const btnRef = React.createRef()
+  const popoverRef = React.createRef()
+  const { locale } = useGlobal()
 
   const openPopover = () => {
-    setPopoverShow(true)
+    createPopper(btnRef.current, popoverRef.current, {
+      placement: 'top'
+    })
+    setQrCodeShow(true)
   }
   const closePopover = () => {
-    setPopoverShow(false)
+    setQrCodeShow(false)
   }
-  return (
-    <div className='my-2'
-         onMouseEnter={() => { openPopover() }}
-         onMouseLeave={() => { closePopover() }}>
-        <div className={(popoverShow ? 'opacity-100' : 'opacity-0') + ' duration-200 ease-in-out font-normal'}>
-          <ShareBar post={post}/>
-        </div>
-        <div ref={btnRef}
-          className='z-20 border dark:border-gray-500 dark:bg-gray-600 bg-white cursor-pointer text-md hover:shadow-2xl shadow-lg'>
-          <i className='fas fa-share-alt-square transform duration-200 hover:scale-150 dark:text-gray-200 p-4' title='share' />
-        </div>
-    </div>
-  )
-}
 
-export default ShareButton
+  const copyUrl = () => {
+    copy(shareUrl)
+    alert(locale.COMMON.URL_COPIED)
+  }
+
+  return <>
+    <div
+      className='py-2 text-gray-500 text-center space-x-2 flex my-1 dark:text-gray-200 overflow-visible'>
+      <div className='hidden md:block text-gray-800 dark:text-gray-300 mr-2 my-2 whitespace-nowrap'>{locale.COMMON.SHARE}:</div>
+      <div className='text-3xl cursor-pointer'>
+        <a className='text-blue-700' href={`https://www.facebook.com/sharer.php?u=${shareUrl}`} >
+          <i className='fab fa-facebook-square'/>
+        </a>
+      </div>
+      <div className='text-3xl cursor-pointer'>
+        <a className='text-blue-400' target='_blank' rel='noreferrer' href={`https://twitter.com/intent/tweet?title=${post.title}&url=${shareUrl}`} >
+          <i className='fab fa-twitter-square'/>
+        </a>
+      </div>
+      <div className='text-3xl cursor-pointer'>
+        <a className='text-blue-500' href={`https://telegram.me/share/url?url=${shareUrl}&text=${post.title}`} >
+        <i className='fab fa-telegram'/>
+        </a>
+      </div>
+      <div className='text-3xl cursor-pointer'>
+        <a className='text-green-600' href={`https://line.me/R/share?text=${shareUrl}`} >
+          <i className='fab fa-line'/>
+        </a>
+      </div>
+      <div className='cursor-pointer text-2xl'>
+        <a className='text-blue-700' onClick={copyUrl} >
+          <i className='fas fa-link'/>
+        </a>
+      </div>
+    </div>
+  </>
+}
+export default ShareBar
