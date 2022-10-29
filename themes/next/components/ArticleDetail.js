@@ -85,6 +85,7 @@ export default function ArticleDetail(props) {
 
       {/* Notion内容主体 */}
       <article id='notion-article' className='px-1'>
+      <YouTubePlayer {...props} />
         {post && (<NotionPage post={post} />)}
       </article>
 
