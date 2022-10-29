@@ -31,7 +31,7 @@ const SocialButton = () => {
         <i className='fas fa-envelope transform hover:scale-125 duration-150'/>
       </a>}
       {BLOG.CONTACT_TWITCH && <a target='_blank' rel='noreferrer' title={'twitch'} href={BLOG.CONTACT_TWITCH} >
-        <i className='fas fa-twitch transform hover:scale-125 duration-150'/>
+        <i className='fab fa-twitch transform hover:scale-125 duration-150'/>
       </a>}
       <a target='_blank' rel='noreferrer' title={'RSS'} href={'/feed'} >
         <i className='fas fa-rss transform hover:scale-125 duration-150 text-orange-500'/>
