@@ -53,10 +53,12 @@ const BLOG = {
 
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
   CONTACT_EMAIL: '',
-  CONTACT_YOUTUBE: 'https://www.youtube.com/channel/UCSVGW4mQ7e1yMUuk23xmgwQ',
+  CONTACT_WEIBO: '',
   CONTACT_TWITTER: 'https://twitter.com/ChifflyneVtuber',
   CONTACT_GITHUB: '',
   CONTACT_TELEGRAM: '',
+  CONTACT_YOUTUBE: 'https://www.youtube.com/channel/UCSVGW4mQ7e1yMUuk23xmgwQ',
+  CONTACT_DISCORD: '',
 
   // 鼠标点击烟花特效
   FIREWORKS: process.env.NEXT_PUBLIC_FIREWORKS || false, // 鼠标点击烟花特效
