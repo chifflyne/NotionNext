@@ -31,7 +31,7 @@ const CONFIG_NEXT = {
 
   ARTICLE_SHARE: false, // 文章分享功能
   ARTICLE_RELATE_POSTS: true, // 相关文章推荐
-  ARTICLE_COPYRIGHT: true // 文章版权声明
+  ARTICLE_COPYRIGHT: false // 文章版权声明
 
 }
 
