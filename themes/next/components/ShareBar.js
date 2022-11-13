@@ -45,7 +45,7 @@ const ShareBar = ({ post }) => {
         </a>
       </div>
       <div className='text-3xl cursor-pointer'>
-        <a className='text-blue-400' target='_blank' rel='noreferrer' href={`https://twitter.com/intent/tweet?title=${post.title}&url${shareUrl}`} >
+        <a className='text-blue-400' target='_blank' rel='noreferrer' href={`https://twitter.com/intent/tweet?title=${post.title}&url=${shareUrl}`} >
           <i className='fab fa-twitter-square'/>
         </a>
       </div>
@@ -54,32 +54,19 @@ const ShareBar = ({ post }) => {
         <i className='fab fa-telegram'/>
         </a>
       </div>
-      <div className='cursor-pointer text-2xl'>
-        <a className='text-green-600' ref={btnRef} onMouseEnter={openPopover} onMouseLeave={closePopover}>
-          <i className='fab fa-weixin'/>
-          <div ref={popoverRef} className={(qrCodeShow ? 'animate__animated animate__fadeIn ' : 'hidden') + ' text-center py-2'}>
-            <div className='p-2 bg-white border-0 duration-200 transform block z-40 font-normal shadow-xl mr-10'>
-              <QRCode value={shareUrl} fgColor='#000000' />
-            </div>
-            <span className='bg-white text-black font-semibold p-1 mb-0 rounded-t-lg text-sm mx-auto mr-10'>
-            {locale.COMMON.SCAN_QR_CODE}
-            </span>
-          </div>
+      <div className='text-3xl cursor-pointer'>
+        <a className='text-green-500' href={`https://line.me/R/share?text=${shareUrl}`} >
+          <i className='fab fa-line'/>
         </a>
       </div>
       <div className='cursor-pointer text-2xl'>
-        <a className='text-red-600' target='_blank' rel='noreferrer' href={`https://service.weibo.com/share/share.php?url=${shareUrl}&title=${post.title}`} >
-          <i className='fab fa-weibo'/>
-        </a>
-      </div>
-      <div className='cursor-pointer text-2xl'>
-        <a className='text-blue-400' target='_blank' rel='noreferrer' href={`http://connect.qq.com/widget/shareqq/index.html?url=${shareUrl}&sharesource=qzone&title=${post.title}&desc=${post.summary}`} >
-          <i className='fab fa-qq'/>
-        </a>
-      </div>
-      <div className='cursor-pointer text-2xl'>
-        <a className='text-yellow-600' onClick={copyUrl} >
+        <a className='text-blue-700' onClick={copyUrl} >
           <i className='fas fa-link'/>
+        </a>
+      </div>
+      <div className='text-3xl cursor-pointer'>
+        <a className='text-yellow-500' href={`https://p.ecpay.com.tw/5689491`} >
+          <i className='fa-solid fa-circle-dollar-to-slot'/>
         </a>
       </div>
     </div>
