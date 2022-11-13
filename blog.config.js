@@ -1,7 +1,7 @@
 // 注: process.env.XX是Vercel的环境变量，配置方式见：https://docs.tangly1024.com/zh/features/personality
 const BLOG = {
   AUTHOR: 'Chifflyne', // 作者
-  BIO: '惡魔吉娃', // 作者简介
+  BIO: '惡魔吉娃，最愛拌咖哩飯', // 作者简介
   LINK: 'https://chifflyne-notion.vercel.app', // 网站地址
   KEYWORDS: 'mmd, vroid, 3d', // 网站关键词 英文逗号隔开
   NOTION_PAGE_ID:
