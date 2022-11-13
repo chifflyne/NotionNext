@@ -59,7 +59,6 @@ const BLOG = {
   CONTACT_TELEGRAM: '',
   CONTACT_YOUTUBE: 'https://www.youtube.com/channel/UCSVGW4mQ7e1yMUuk23xmgwQ',
   CONTACT_DISCORD: '',
-  CONTACT_TWITCH: 'https://www.twitch.tv/chifflyne_ch',
 
   // 鼠标点击烟花特效
   FIREWORKS: process.env.NEXT_PUBLIC_FIREWORKS || false, // 鼠标点击烟花特效
