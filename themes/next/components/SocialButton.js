@@ -11,7 +11,6 @@ const SocialButton = () => {
     <div className='space-x-3 text-xl text-gray-600 dark:text-gray-400 '>
       {BLOG.CONTACT_YOUTUBE && <a target="_blank" rel="noreferrer" title={'youtube'} href={BLOG.CONTACT_YOUTUBE} >
         <i className="fab fa-youtube transform hover:scale-125 duration-150  text-red-400" />
-        <i className="fab fa-youtube transform hover:scale-125 duration-150  text-red-600" />
       </a>}
       {BLOG.CONTACT_GITHUB && <a target='_blank' rel='noreferrer' title={'github'} href={BLOG.CONTACT_GITHUB} >
         <i className='fab fa-github transform hover:scale-125 duration-150'/>
@@ -20,7 +19,6 @@ const SocialButton = () => {
       </a>}
       {BLOG.CONTACT_TWITCH && <a target='_blank' rel='noreferrer' title={'twitch'} href={BLOG.CONTACT_TWITCH} >
         <i className='fab fa-twitch transform hover:scale-125 duration-150 text-indigo-400'/>
-        <i className='fab fa-twitch transform hover:scale-125 duration-150'/>
       </a>}
       <a target='_blank' rel='noreferrer' title={'RSS'} href={'/feed'} >
         <i className='fas fa-rss transform hover:scale-125 duration-150 text-orange-500'/>
