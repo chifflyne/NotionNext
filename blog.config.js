@@ -52,13 +52,8 @@ const BLOG = {
   PREVIEW_TAG_COUNT: 16, // 首页最多展示的标签数量，0为不限制
 
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
-  CONTACT_EMAIL: '',
-  CONTACT_WEIBO: '',
   CONTACT_TWITTER: 'https://twitter.com/ChifflyneVtuber',
-  CONTACT_GITHUB: '',
-  CONTACT_TELEGRAM: '',
   CONTACT_YOUTUBE: 'https://www.youtube.com/channel/UCSVGW4mQ7e1yMUuk23xmgwQ',
-  CONTACT_DISCORD: '',
   CONTACT_TWITCH: 'https://www.twitch.tv/chifflyne_ch',
 
   // 鼠标点击烟花特效
