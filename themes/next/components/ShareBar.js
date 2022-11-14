@@ -36,40 +36,35 @@ const ShareBar = ({ post }) => {
   }
 
   return <>
-    <div
-      className='py-2 text-gray-500 text-center space-x-2 flex my-1 dark:text-gray-200 overflow-visible'>
-      <div className='hidden md:block text-gray-800 dark:text-gray-300 mr-2 my-2 whitespace-nowrap'>{locale.COMMON.SHARE}:</div>
-      <div className='text-3xl cursor-pointer'>
-        <a className='text-blue-700' href={`https://www.facebook.com/sharer.php?u=${shareUrl}`} >
-          <i className='fab fa-facebook-square'/>
-        </a>
-      </div>
-      <div className='text-3xl cursor-pointer'>
-        <a className='text-blue-400' target='_blank' rel='noreferrer' href={`https://twitter.com/intent/tweet?title=${post.title}&url=${shareUrl}`} >
-          <i className='fab fa-twitter-square'/>
-        </a>
-      </div>
-      <div className='text-3xl cursor-pointer'>
-        <a className='text-blue-500' href={`https://telegram.me/share/url?url=${shareUrl}&text=${post.title}`} >
-        <i className='fab fa-telegram'/>
-        </a>
-      </div>
-      <div className='text-3xl cursor-pointer'>
-        <a className='text-green-500' href={`https://line.me/R/share?text=${shareUrl}`} >
-          <i className='fab fa-line'/>
-        </a>
-      </div>
-      <div className='cursor-pointer text-2xl'>
-        <a className='text-blue-700' onClick={copyUrl} >
-          <i className='fas fa-link'/>
-        </a>
-      </div>
-      <div className='text-3xl cursor-pointer'>
-        <a className='text-yellow-500' href={`https://p.ecpay.com.tw/5689491`} >
-          <i className='fa-solid fa-circle-dollar-to-slot'/>
-        </a>
-      </div>
+  <div
+    className='py-2 text-gray-500 text-center space-x-2 flex my-1 dark:text-gray-200 overflow-visible'>
+    <div className='hidden md:block text-gray-800 dark:text-gray-300 mr-2 my-2 whitespace-nowrap'>{locale.COMMON.SHARE}:</div>
+    <div className='text-3xl cursor-pointer'>
+      <a className='text-blue-700' href={`https://www.facebook.com/sharer.php?u=${shareUrl}`} >
+        <i className='fab fa-facebook-square'/>
+      </a>
     </div>
+    <div className='text-3xl cursor-pointer'>
+      <a className='text-blue-400' target='_blank' rel='noreferrer' href={`https://twitter.com/intent/tweet?title=${post.title}&url=${shareUrl}`} >
+        <i className='fab fa-twitter-square'/>
+      </a>
+    </div>
+    <div className='text-3xl cursor-pointer'>
+      <a className='text-blue-500' href={`https://telegram.me/share/url?url=${shareUrl}&text=${post.title}`} >
+      <i className='fab fa-telegram'/>
+      </a>
+    </div>
+    <div className='text-3xl cursor-pointer'>
+      <a className='text-green-500' href={`https://line.me/R/share?text=${shareUrl}`} >
+        <i className='fab fa-line'/>
+      </a>
+    </div>
+    <div className='cursor-pointer text-2xl'>
+      <a className='text-blue-700' onClick={copyUrl} >
+        <i className='fas fa-link'/>
+      </a>
+    </div>
+  </div>
   </>
 }
 export default ShareBar

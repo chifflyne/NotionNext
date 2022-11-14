@@ -2,7 +2,7 @@
 const BLOG = {
   AUTHOR: '吉芙琳吉耶嘉', // 作者
   BIO: '一隻惡魔吉娃娃', // 作者简介
-  LINK: 'chifflyne-notion-ivrvtj0i8-chifflyne.vercel.app', // 网站地址
+  LINK: 'chifflyne-notion.vercel.app', // 网站地址
   KEYWORDS: 'VRoid,MMD', // 网站关键词 英文逗号隔开
   NOTION_PAGE_ID:
   process.env.NOTION_PAGE_ID || '02ab3b8678004aa69e9e415905ef32a5', // Important page_id！！！Duplicate Template from  https://www.notion.so/tanghh/02ab3b8678004aa69e9e415905ef32a5
@@ -31,8 +31,8 @@ const BLOG = {
   CUSTOM_FONT_SANS: ['jf-openhuninn'], // 自定义无衬线字体
   CUSTOM_FONT_SERIF: ['jf-openhuninn'], // 自定义衬线字体
 
-  // 图标字体
-  FONT_AWESOME_PATH: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', // 图标库CDN ，国内推荐BootCDN，国外推荐 CloudFlare https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
+  // 图标库CDN(可以直接改版本号）
+  FONT_AWESOME_PATH: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/6.2.0/css/all.min.css',
 
   BACKGROUND_LIGHT: '#eeeeee', // use hex value, don't forget '#' e.g #fffefc
   BACKGROUND_DARK: '#000000', // use hex value, don't forget '#'
@@ -67,7 +67,7 @@ const BLOG = {
   WIDGET_PET: process.env.NEXT_PUBLIC_WIDGET_PET || false, // 是否显示宠物挂件
   WIDGET_PET_LINK:
     'https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json', // 挂件模型地址 @see https://github.com/xiazeyu/live2d-widget-models
-  WIDGET_PET_SWITCH_THEME: false, // 点击宠物挂件切换博客主题
+  WIDGET_PET_SWITCH_THEME: true, // 点击宠物挂件切换博客主题
 
   // 评论互动 可同时开启多个支持 GISCUS CUSDIS UTTERRANCES GITALK
 
@@ -123,7 +123,7 @@ const BLOG = {
   COMMENT_WALINE_RECENT: process.env.NEXT_PUBLIC_WALINE_RECENT || false, // 最新评论
 
   // 站点统计
-  ANALYTICS_BUSUANZI_ENABLE: false, // 展示网站阅读量、访问数 see http://busuanzi.ibruce.info/
+  ANALYTICS_BUSUANZI_ENABLE: true, // 展示网站阅读量、访问数 see http://busuanzi.ibruce.info/
   ANALYTICS_BAIDU_ID: process.env.NEXT_PUBLIC_ANALYTICS_BAIDU_ID || '', // e.g 只需要填写百度统计的id，[baidu_id] -> https://hm.baidu.com/hm.js?[baidu_id]
   ANALYTICS_CNZZ_ID: process.env.NEXT_PUBLIC_ANALYTICS_CNZZ_ID || '', // 只需要填写站长统计的id, [cnzz_id] -> https://s9.cnzz.com/z_stat.php?id=[cnzz_id]&web_id=[cnzz_id]
   ANALYTICS_GOOGLE_ID: process.env.NEXT_PUBLIC_ANALYTICS_GOOGLE_ID || '', // 谷歌Analytics的id e.g: G-XXXXXXXXXX

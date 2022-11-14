@@ -7,7 +7,7 @@ const CONFIG_NEXT = {
 
   POST_LIST_COVER: false, // 文章列表显示封面图
   POST_LIST_PREVIEW: true, // 显示文章预览
-  POST_LIST_SUMMARY: true, // 显示用户自定义摘要，有预览时优先只展示预览
+  POST_LIST_SUMMARY: false, // 显示用户自定义摘要，有预览时优先只展示预览
 
   // 右侧组件
   RIGHT_BAR: true, // 是否显示右侧栏
@@ -29,7 +29,7 @@ const CONFIG_NEXT = {
   WIDGET_DARK_MODE: false, // 显示日间/夜间模式切换
   WIDGET_TOC: true, // 移动端显示悬浮目录
 
-  ARTICLE_SHARE: true, // 文章分享功能
+  ARTICLE_SHARE: false, // 文章分享功能
   ARTICLE_RELATE_POSTS: true, // 相关文章推荐
   ARTICLE_COPYRIGHT: false // 文章版权声明
 
