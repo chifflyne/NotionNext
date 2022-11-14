@@ -11,6 +11,7 @@ import { useRouter } from 'next/router'
 import ArticleCopyright from './ArticleCopyright'
 import WordCount from './WordCount'
 import NotionPage from '@/components/NotionPage'
+import { YouTubePlayer } from '@/components/YouTubePlayer'
 
 /**
  *
@@ -74,16 +75,13 @@ export default function ArticleDetail(props) {
           <div className='mr-2'>
             <i className='far fa-clock mr-2' />{locale.COMMON.LAST_EDITED_TIME} {post.lastEditedTime}
           </div>
-
-          <div className='flex flex-nowrap whitespace-nowrap items-center font-light text-md'>
-            <WordCount />
-          </div>
         </section>
 
       </header>}
 
       {/* Notion内容主体 */}
       <article id='notion-article' className='px-1'>
+      <YouTubePlayer {...props} />
         {post && (<NotionPage post={post} />)}
       </article>
 
