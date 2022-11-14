@@ -30,7 +30,7 @@ import React from 'react'
        {BLOG.CONTACT_EMAIL && <a target='_blank' rel='noreferrer' title={'email'} href={`mailto:${BLOG.CONTACT_EMAIL}`} >
          <i className='fas fa-envelope transform hover:scale-125 duration-150'/>
        </a>}
-      {BLOG.CONTACT_TWITCH && <a target='_blank' rel='noreferrer' title={'twitch'} href={BLOG.CONTACT_TWITCH} >
+       {BLOG.CONTACT_TWITCH && <a target='_blank' rel='noreferrer' title={'twitch'} href={BLOG.CONTACT_TWITCH} >
          <i className='fab fa-twitch transform hover:scale-125 duration-150 text-indigo-400'/>
        </a>}
        <a target='_blank' rel='noreferrer' title={'RSS'} href={'/feed'} >
