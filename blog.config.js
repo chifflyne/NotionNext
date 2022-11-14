@@ -55,6 +55,7 @@ const BLOG = {
   CONTACT_EMAIL: '',
   CONTACT_WEIBO: '',
   CONTACT_TWITTER: 'https://twitter.com/ChifflyneVtuber',
+  CONTACT_TWITCH: 'https://www.twitch.tv/chifflyne_ch',
   CONTACT_GITHUB: '',
   CONTACT_TELEGRAM: '',
   CONTACT_YOUTUBE: 'https://www.youtube.com/channel/UCSVGW4mQ7e1yMUuk23xmgwQ',
