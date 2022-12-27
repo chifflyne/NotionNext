@@ -8,6 +8,8 @@ import { idToUuid } from 'notion-utils'
 import Router from 'next/router'
 import { isBrowser } from '@/lib/utils'
 import { getNotion } from '@/lib/notion/getNotion'
+import { getPageTableOfContents } from '@/lib/notion/getPageTableOfContents'
+import { createHash } from 'crypto'
 
 /**
  * 根据notion的slug访问页面
@@ -28,6 +30,11 @@ const Slug = props => {
     if (post?.password && post?.password !== '') {
       setLock(true)
     } else {
+      if (!lock && post?.blockMap?.block) {
+        post.content = Object.keys(post.blockMap.block)
+        post.toc = getPageTableOfContents(post, post.blockMap)
+      }
+
       setLock(false)
     }
   }, [post])
@@ -51,10 +58,15 @@ const Slug = props => {
    * 验证文章密码
    * @param {*} result
    */
-  const validPassword = result => {
-    if (result) {
+  const validPassword = passInput => {
+    const encrypt = createHash('md5')
+      .update(post.slug + passInput)
+      .digest('hex').trim().toLowerCase()
+    if (passInput && encrypt === post.password) {
       setLock(false)
+      return true
     }
+    return false
   }
 
   props = { ...props, lock, setLock, validPassword }

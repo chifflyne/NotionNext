@@ -1,6 +1,7 @@
 import React from 'react'
 import Prism from 'prismjs'
 import 'prismjs/plugins/toolbar/prism-toolbar'
+import 'prismjs/plugins/toolbar/prism-toolbar.min.css'
 import 'prismjs/plugins/show-language/prism-show-language'
 import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard'
 import 'prismjs/plugins/line-numbers/prism-line-numbers'
@@ -8,7 +9,6 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 // 所有语言的prismjs 使用autoloader引入
 import 'prismjs/plugins/autoloader/prism-autoloader'
 // mermaid图
-import mermaid from 'mermaid'
 import BLOG from '@/blog.config'
 
 /**
@@ -18,6 +18,7 @@ import BLOG from '@/blog.config'
 const PrismMac = () => {
   React.useEffect(() => {
     renderPrismMac()
+    renderMermaid()
 
     // 折叠代码行号bug
     const observer = new MutationObserver(mutationsList => {
@@ -35,21 +36,10 @@ const PrismMac = () => {
   return <></>
 }
 
-function renderPrismMac() {
-  const container = document?.getElementById('container-inner')
-  const codeToolBars = container?.getElementsByClassName('code-toolbar')
-
-  // Add line numbers
-  const codeBlocks = container?.getElementsByTagName('pre')
-  if (codeBlocks) {
-    Array.from(codeBlocks).forEach(item => {
-      if (!item.classList.contains('line-numbers')) {
-        item.classList.add('line-numbers')
-        item.style.whiteSpace = 'pre-wrap'
-      }
-    })
-  }
-
+/**
+ * 将mermaid语言 渲染成图片
+ */
+const renderMermaid = async() => {
   //   支持 Mermaid
   const mermaidPres = document.querySelectorAll('pre.notion-code.language-mermaid')
   if (mermaidPres) {
@@ -73,8 +63,24 @@ function renderPrismMac() {
       }
     }
     if (needLoad) {
-      mermaid.contentLoaded()
+      const asyncMermaid = await import('mermaid')
+      asyncMermaid.default.contentLoaded()
     }
+  }
+}
+
+function renderPrismMac() {
+  const container = document?.getElementById('container-inner')
+
+  // Add line numbers
+  const codeBlocks = container?.getElementsByTagName('pre')
+  if (codeBlocks) {
+    Array.from(codeBlocks).forEach(item => {
+      if (!item.classList.contains('line-numbers')) {
+        item.classList.add('line-numbers')
+        item.style.whiteSpace = 'pre-wrap'
+      }
+    })
   }
 
   // 重新渲染之前检查所有的多余text
@@ -87,6 +93,7 @@ function renderPrismMac() {
     console.log('代码渲染', err)
   }
 
+  const codeToolBars = container?.getElementsByClassName('code-toolbar')
   // Add pre-mac element for Mac Style UI
   if (codeToolBars) {
     Array.from(codeToolBars).forEach(item => {

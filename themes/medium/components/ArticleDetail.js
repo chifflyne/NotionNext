@@ -21,7 +21,7 @@ export const ArticleDetail = props => {
   return <div id='container'>
 
         {/* title */}
-        <h1 className="text-3xl pt-12 font-sans dark:text-gray-100">{post?.title}</h1>
+        <h1 className="text-3xl pt-12 font-sans dark:text-gray-300">{post?.title}</h1>
 
         {/* meta */}
         <section className="py-2 items-center text-sm font-sans px-1">
@@ -36,7 +36,7 @@ export const ArticleDetail = props => {
             <Link href="/about" passHref>
                 <div className='flex pt-2'>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={siteInfo?.icon} className='rounded-full cursor-pointer' width={22} />
+                    <img src={siteInfo?.icon} className='rounded-full cursor-pointer' width={22} alt={BLOG.AUTHOR} />
 
                     <div className="mr-3 ml-2 my-auto text-green-500 cursor-pointer">
                         {BLOG.AUTHOR}
@@ -61,6 +61,7 @@ export const ArticleDetail = props => {
                 data-ad-slot="3806269138"
             />
         </section>
+
         <section>
             <div className='flex justify-between'>
                 {CONFIG_MEDIUM.POST_DETAIL_CATEGORY && post.category && <CategoryItem category={post.category} />}
